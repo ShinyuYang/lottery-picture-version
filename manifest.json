@@ -73,6 +73,24 @@
         "title" : "开心抽奖-图片版",
         "router" : {
             "base" : "./"
+        },
+        "devServer" : {
+            "proxy" : {
+                "/8888" : {
+                    "target" : "https://www.baidu.com/api",
+                    "changeOrigin" : true,
+                    "pathRewrite" : {
+                        "^/8888" : "/"
+                    }
+                },
+                "/8800" : {
+                    "target" : "https://www.taobao.com/api",
+                    "changeOrigin" : true,
+                    "pathRewrite" : {
+                        "^/8800" : ""
+                    }
+                }
+            }
         }
     }
 }
